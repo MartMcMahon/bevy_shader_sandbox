@@ -22,9 +22,14 @@ fn fragment(
     var input2: vec2<f32> = vec2<f32>(world_position.y  , material.time);
     var input3: vec2<f32> = vec2<f32>(world_position.z  , material.time);
 
-    var value1 = cos(world_position.x);
-    var value2 = cos(world_position.y + material.time);
-    var value3 = sin(material.time);
+    var value1 = cos(world_position.x - material.time);
+    var value2 = cos(world_position.y -  material.time);
+    var value3 = sin(world_position.z + material.time);
+
+    /* var value1 = cos(world_position.x); */
+    /* var value2 = cos(world_position.y); */
+    /* var value3 = sin(world_position.z); */
+
 
     if (normals.z == 1.0) {
         return vec4<f32>(value1 - 0.1,value2 - 0.1,value3 - 0.1,1.0);

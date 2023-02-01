@@ -13,8 +13,12 @@ fn main() {
         .add_plugin(MaterialPlugin::<CustomMaterial>::default())
         .add_startup_system(setup)
         .add_system(change_color)
+        .add_system(move_around)
         .run();
 }
+
+#[derive(Component)]
+struct MovesAround;
 
 #[derive(Component)]
 struct Cube;
@@ -26,21 +30,43 @@ fn setup(
     mut materials: ResMut<Assets<CustomMaterial>>,
     asset_server: Res<AssetServer>,
 ) {
-    // cube
-    commands.spawn(MaterialMeshBundle {
-        mesh: meshes.add(Mesh::from(shape::Cube { size: 1.0 })),
-        transform: Transform::from_xyz(0.0, 0.5, 0.0),
-        material: materials.add(CustomMaterial {
-            time: 0.,
-            alpha_mode: AlphaMode::Blend,
-        }),
-        ..default()
+    let cube_mat_handle = materials.add(CustomMaterial {
+        time: 0.,
+        alpha_mode: AlphaMode::Blend,
     });
+
+    // cube
+    commands
+        .spawn(MaterialMeshBundle {
+            mesh: meshes.add(Mesh::from(shape::Cube { size: 1.0 })),
+            transform: Transform::from_xyz(0.0, 0.5, 0.0),
+            material: cube_mat_handle.clone(),
+            ..default()
+        })
+        .insert(MovesAround);
+
+    for i in -2..2 {
+        commands.spawn(MaterialMeshBundle {
+            mesh: meshes.add(Mesh::from(shape::Cube { size: 0.75 })),
+            transform: Transform::from_xyz(i as f32, i as f32 - 0.2, i as f32),
+            material: cube_mat_handle.clone(),
+            ..default()
+        });
+    }
 }
 
 fn change_color(mut materials: ResMut<Assets<CustomMaterial>>, time: Res<Time>) {
     for material in materials.iter_mut() {
         material.1.time = time.elapsed_seconds() as f32;
+    }
+}
+
+fn move_around(mut query: Query<(&MovesAround, &mut Transform)>, time: Res<Time>) {
+    for (thing, mut transform) in query.iter_mut() {
+        let s = time.elapsed_seconds();
+        transform.translation.x = s.sin();
+        transform.translation.y = s.cos();
+        transform.translation.z = s.cos();
     }
 }
 

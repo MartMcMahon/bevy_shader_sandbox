@@ -1,23 +1,25 @@
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
-Camera	/Users/mart/code/bevy_sandbox/src/main.rs	/^pub struct Camera {$/;"	s
-Cube	/Users/mart/code/bevy_sandbox/src/main.rs	/^struct Cube;$/;"	s
-CustomMaterial	/Users/mart/code/bevy_sandbox/src/main.rs	/^pub struct CustomMaterial {$/;"	s
+Camera	/Users/mart/code/bevy_shader_sandbox/src/main.rs	/^pub struct Camera {$/;"	s
+Cube	/Users/mart/code/bevy_shader_sandbox/src/main.rs	/^struct Cube;$/;"	s
+CustomMaterial	/Users/mart/code/bevy_shader_sandbox/src/main.rs	/^pub struct CustomMaterial {$/;"	s
 FlyCam	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^pub struct FlyCam;$/;"	s
 InputState	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^struct InputState {$/;"	s
 MovementSettings	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^pub struct MovementSettings {$/;"	s
+MovesAround	/Users/mart/code/bevy_shader_sandbox/src/main.rs	/^struct MovesAround;$/;"	s
 NoCameraPlayerPlugin	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^pub struct NoCameraPlayerPlugin;$/;"	s
 PlayerPlugin	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^pub struct PlayerPlugin;$/;"	s
-alpha_mode	/Users/mart/code/bevy_sandbox/src/main.rs	/^    fn alpha_mode(&self) -> AlphaMode {$/;"	f
+alpha_mode	/Users/mart/code/bevy_shader_sandbox/src/main.rs	/^    fn alpha_mode(&self) -> AlphaMode {$/;"	f
 build	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^    fn build(&self, app: &mut App) {$/;"	f
-change_color	/Users/mart/code/bevy_sandbox/src/main.rs	/^fn change_color(mut materials: ResMut<Assets<CustomMaterial>>, time: Res<Time>) {$/;"	f
+change_color	/Users/mart/code/bevy_shader_sandbox/src/main.rs	/^fn change_color(mut materials: ResMut<Assets<CustomMaterial>>, time: Res<Time>) {$/;"	f
 cursor_grab	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^fn cursor_grab(keys: Res<Input<KeyCode>>, mut windows: ResMut<Windows>) {$/;"	f
 default	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^    fn default() -> Self {$/;"	f
-fragment_shader	/Users/mart/code/bevy_sandbox/src/main.rs	/^    fn fragment_shader() -> ShaderRef {$/;"	f
+fragment_shader	/Users/mart/code/bevy_shader_sandbox/src/main.rs	/^    fn fragment_shader() -> ShaderRef {$/;"	f
 initial_grab_cursor	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^fn initial_grab_cursor(mut windows: ResMut<Windows>) {$/;"	f
-main	/Users/mart/code/bevy_sandbox/src/main.rs	/^fn main() {$/;"	f
+main	/Users/mart/code/bevy_shader_sandbox/src/main.rs	/^fn main() {$/;"	f
+move_around	/Users/mart/code/bevy_shader_sandbox/src/main.rs	/^fn move_around(mut query: Query<(&MovesAround, &mut Transform)>, time: Res<Time>) {$/;"	f
 player_look	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^fn player_look($/;"	f
 player_move	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^fn player_move($/;"	f
-setup	/Users/mart/code/bevy_sandbox/src/main.rs	/^fn setup($/;"	f
+setup	/Users/mart/code/bevy_shader_sandbox/src/main.rs	/^fn setup($/;"	f
 setup_player	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^fn setup_player(mut commands: Commands) {$/;"	f
 toggle_grab_cursor	/Users/mart/.cargo/registry/src/github.com-1ecc6299db9ec823/bevy_flycam-0.9.0/src/lib.rs	/^fn toggle_grab_cursor(window: &mut Window) {$/;"	f
